@@ -13,7 +13,7 @@ You will need
 * the HDF5 tools "h5cc" and "h5c++"
 * several external libraries and plugins
 
-This should be achievalbe e.g. on Ubuntu 22.04 using the following
+This should be achievable e.g. on Ubuntu 22.04 using the following
 commands (in the same directory with this source code):
 
 ```
