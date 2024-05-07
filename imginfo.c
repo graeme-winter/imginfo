@@ -2446,7 +2446,7 @@ char *hdf5_read_group_attribute(hid_t fid, const char* item, const char* attribu
       hid_t attribute_space = H5Aget_space(attribute_id);
       size_t attribute_n = H5Tget_size(attribute_type);
       r = (char *)malloc(sizeof(char)*(attribute_n+1));
-      status H5Aread(attribute_id, attribute_type, r);
+      status = H5Aread(attribute_id, attribute_type, r);
       // safety net (assume H5T_STR_NULLPAD)
       // see also: https://github.com/h5py/h5py/issues/727
       //           https://forum.hdfgroup.org/t/bug-writing-a-string-does-not-include-null-terminator/5281

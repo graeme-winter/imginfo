@@ -21,7 +21,7 @@ HXXFLAGS += -DUSE_HDF5
 LDFLAGS  += -L$(HDF5_LIB) -lhdf5 -lz -lbz2
 
 COMPILE.hxx = $(HXX) $(HXXFLAGS) -c -o $(1) $(2)
-COMPILE.hcc = $(HCC) $(HCCFLAGS) -c -o $(1) $(2)
+COMPILE.hcc = $(HCC) $(HCCFLAGS) -c -o $(1) $(2) -I $(BITSHUFFLE_MASTER)/lz4
 LINK.hxx    = $(HXX) $(HXXFLAGS)    -o $(1) $(2) $(LDFLAGS)
 LINK.hcc    = $(HCC) $(HCCFLAGS)    -o $(1) $(2) $(LDFLAGS)
 
