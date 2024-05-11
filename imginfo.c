@@ -2371,6 +2371,10 @@ void empty_header(image_header* h) {
 
 char *hdf5_read_char(hid_t fid, const char* item) {
 
+  if (iverb > 2) {
+    printf("Reading char: %s\n", item);
+  }
+
   char* r = (char*)malloc(1);r[0] = '\0';
   hid_t did, space_c, memtype_c, filetype_c;
   hsize_t dims_c[1] = {1};
@@ -2488,6 +2492,11 @@ int hdf5_read_int(hid_t fid, const char* item) {
   //          H5T_NATIVE_UINT
   //          H5T_NATIVE_FLOAT
   //          H5T_NATIVE_DOUBLE
+
+  if (iverb > 2) {
+    printf("Reading int: %s\n", item);
+  }
+
   int r = INIT_INT;
   hid_t did;
   herr_t status;
@@ -2599,6 +2608,10 @@ double hdf5_read_double(hid_t fid, const char* item, const char* unit) {
   herr_t status;
   double data_d[10];
   double fac = 1.0;
+
+  if (iverb > 2) {
+    printf("Reading double: %s\n", item);
+  }
 
   status = H5Lexists(fid,item,H5P_DEFAULT);
   if (status > 0 ) {
